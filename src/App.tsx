@@ -30,58 +30,12 @@ const menuItems = {
       price: 'Rs.430/470',
       description: 'Olive Oil, Tomato Sauce, Mozarella Cheese',
     },
-     {
+    {
       name: 'Pizza Margherita',
       price: 'Rs.430/470',
       description: 'Olive Oil,Fresh Totato, Tomato Sauce, Mozarella Cheese',
       size: '9 inches, 12 inches',
     },
-     {
-      name: 'AL Funghi',
-      price: 'Rs.480/550',
-      description: 'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Mushroom',
-    },
-     {
-      name: 'Mushroom and Olives',
-      price: 'Rs.530/590',
-      description: 'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Mushroom and Black Olives',
-    },
-    {
-      name: 'Standared Veg',
-      price: 'Rs.520/600',
-      description: 'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Mushroom and Green Bell Peppers',
-    },
-    {
-      name: 'Cheesy Mushroom',
-      price: 'Rs.520/600',
-      description: 'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Extra Mozarella',
-    },
-     {
-      name: 'Pineapple and Black Olives',
-      price: 'Rs.580/660',
-      description: 'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Juicy Pineapples and Black Olives, size: 9 inches, 12 inches',
-      
-    },
-     {
-      name: 'Grandma"s Pizza',
-      price: 'Rs.495',
-      description: 'A Squated shape pizza, Neopolitana Sauce, Oregano and Mozarella',
-    },
-     {
-      name: 'New York Pizza',
-      price: 'Rs.440/490',
-      description: 'Olive Oil, Tomato Sauce, Mozarella Cheese, Topped with Juicy Pineapples and Black Olives',
-      },
-     {
-      name: 'Greek Style',
-      price: 'Rs.530/580',
-      description: 'Olive Oil, Tomato Sauce, Mozarella Cheese, Topped with Diced Tomatoes, Mushroom and Green Bell Peppers',
-      },
-    {
-      name: 'White/ Blanca Pizza',
-      price: 'Rs.410/490',
-      description: 'Garlic, Buffer, Mozarella',
-      },
   ],
   chickenPizza: [
     {
@@ -100,73 +54,8 @@ const menuItems = {
       price: 'Rs.520/600',
       description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
     },
-    {
-      name: 'Spicy Chiken',
-      price: 'Rs.540/680',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
-    },
-    {
-      name: 'Tandoori Chicken',
-      price: 'Rs.630/720',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
-    },
-    {
-      name: 'Peri Peri Chicken',
-      price: 'Rs.630/720',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
-    },
-    {
-      name: 'Cheesy Chicken',
-      price: 'Rs.650/740',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
-    },
-    {
-      name: 'Barbeque Chicken',
-      price: 'Rs.650/740',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
-    },
-    {
-      name: 'Chicken Mushroom',
-      price: 'Rs.660/750',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
-    },
   ],
   premiumNonVegPizza: [
-    {
-      name: 'Pepperoni Pizza',
-      price: 'Rs.630/720',
-      description: 'Loaded with various premium meats',
-    },
-    {
-      name: 'Bacon and Pineapple',
-      price: 'Rs.645/740',
-      description: 'Loaded with various premium meats',
-    },
-    {
-      name: 'Hawaiian Pizza',
-      price: 'Rs.645/740',
-      description: 'Loaded with various premium meats',
-    },
-    {
-      name: 'Delux Pizza',
-      price: 'Rs.760/880',
-      description: 'Loaded with various premium meats',
-    },
-    {
-      name: 'Cheesy Bacon Galore',
-      price: 'Rs.760/880',
-      description: 'Loaded with various premium meats',
-    },
-    {
-      name: '3 Meat Pizza',
-      price: 'Rs.760/880',
-      description: 'Loaded with various premium meats',
-    },
-    {
-      name: 'Meat Lovers',
-      price: 'Rs.850/980',
-      description: 'Loaded with various premium meats',
-    },
     {
       name: "Supper Papa's",
       price: 'Rs. 910/1050',
@@ -178,8 +67,13 @@ const menuItems = {
       spicyLevel: 'Hot',
       bestSeller: true
     },
+    {
+      name: 'Pepperoni Pizza',
+      price: 'Rs.630/720',
+      description: 'Loaded with various premium meats',
+    },
   ],
-  fromthechef:[
+  fromthechef: [
     {
       name: 'Chicken Chilli',
       price: 'Rs.350',
@@ -187,14 +81,6 @@ const menuItems = {
     {
       name: 'Chips Chilli',
       price: 'Rs.275',
-    },
-    {
-      name: 'Peri Peri Chicken/Paneer & Fries',
-      price: 'Rs.420',
-    },
-    {
-      name: 'Rice Bowl Chicken/Paneer, Chicken Satay',
-      price: '355/399',
     },
   ],
   fryer: [
@@ -206,25 +92,12 @@ const menuItems = {
       name: 'Spicy Chicken Wings',
       price: 'Rs.300',
     },
-    {
-      name: 'Chicken in Basket',
-      price: 'Rs.325',
-    },
-    {
-      name: 'KFC Styled Chicken',
-      price: 'Rs.450',
-    },
   ],
   breakfast: [
     {
       name: "Papa's Breakfast Set",
       price: 'Rs.550',
       description: 'Sausage, Bacon, Egg, Phaparko Roti, Hash Brown (Honey or Maple Syrup), Tea or Coffee',
-    },
-    {
-      name: "Papa's Veg Breakfast Set",
-      price: 'Rs.499',
-      description: 'Phaparko Roti, Hash Brown, Egg, Mushroom Grilled Tomato',
     },
   ],
   sandwiches: [
@@ -233,42 +106,12 @@ const menuItems = {
       price: 'Rs.300',
       description: 'Cooked with Herbs, Served with Butteted Potatos, Carrot',
     },
-    {
-      name: 'Periperi Chicken/Paneer',
-      price: 'Rs.300',
-      description: 'A Crisp, Fresh Summer Salad, Seasonal Greens, Berries',
-    },
-    {
-      name: 'Bacon and Egg',
-      price: 'Rs.300',
-      description: 'Refreshing and Spicy Leek Soup, Topped with Eatable Flowers',
-    },
-    {
-      name: 'Cheese Sandwich',
-      price: 'Rs.230',
-      description: 'Warming Potato, Beet Gratin, Served with a Protein of the Season',
-    },
   ],
   burgers: [
     {
       name: 'Grilled Chicken Burger',
       price: 'Rs.495',
       description: 'Filleted Chicken Breast, Grilled on a Pan with Cheese, BBQ Sauce served with Fries, A Choice of Sauce',
-    },
-    {
-      name: 'Crispy Chicken Burger',
-      price: 'Rs.295',
-      description: 'KFC styles Chicken Fillet in a Warm Loasted Bun, Served with Fries, Thousand Island Sauce',
-    },
-    {
-      name: 'VEG Burger',
-      price: 'Rs.265',
-      description: 'Deep Fried Vegetarian Pally with a Buffer Toasted Bun, Served with Thousand Island Sauce',
-    },
-    {
-      name: 'Peri Peri Burger',
-      price: 'Rs.385',
-      description: 'Chicken-Paneer',
     },
   ],
   coffee: [
@@ -277,68 +120,8 @@ const menuItems = {
       price: 'Rs. 120',
     },
     {
-      name: 'Doppio',
-      price: 'Rs. 190',
-    },
-    {
-      name: 'Caramel Macchiato',
-      price: 'Rs. 340',
-    },
-    {
       name: 'Cappuccino',
       price: 'Rs. 220',
-    },
-    {
-      name: 'Coffee Latte',
-      price: 'Rs. 240',
-    },
-    {
-      name: 'Coffee Mocha',
-      price: 'Rs. 290',
-    },
-    {
-      name: 'Americano',
-      price: 'Rs. 190',
-    },
-    {
-      name: 'Hazulenut Latte',
-      price: 'Rs. 275',
-    },
-     {
-      name: 'Caramal Latte',
-      price: 'Rs. 275',
-    },
-     {
-      name: 'Honey Latte',
-      price: 'Rs. 275',
-    },
-     {
-      name: 'Cinnamon Latte',
-      price: 'Rs. 275',
-    },
-     {
-      name: 'Turmeric Latte',
-      price: 'Rs. 275',
-    },
-    {
-      name: 'Iced Latte',
-      price: 'Rs. 270',
-    },
-     {
-      name: 'Iced Americano',
-      price: 'Rs. 260',
-    },
-     {
-      name: 'Iced Flavor Coffee',
-      price: 'Rs. 325',
-    },
-     {
-      name: 'Iced Caramel Macchito',
-      price: 'Rs. 340',
-    },
-     {
-      name: 'Iced Tea (Peach/Apple/Lamon)',
-      price: 'Rs.230',
     },
   ],
 };
@@ -362,6 +145,7 @@ function App() {
   const [selectedPizza, setSelectedPizza] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('vegPizza');
+  const [isAtBottom, setIsAtBottom] = useState(false);
 
   const scrollToContact = () => {
     setActiveSection('home');
@@ -378,23 +162,47 @@ function App() {
   }, [activeSection]);
 
   useEffect(() => {
+    let ticking = false;
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      
-      if (scrollPosition + windowHeight >= documentHeight) {
-        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollPosition = window.scrollY;
+          const windowHeight = window.innerHeight;
+          const documentHeight = document.documentElement.scrollHeight;
+          const buffer = 50; // Buffer zone in pixels
+
+          // Check if we're near the bottom
+          if (scrollPosition + windowHeight >= documentHeight - buffer) {
+            if (!isAtBottom) {
+              setIsAtBottom(true);
+              // Smoothly scroll to the exact bottom
+              window.scrollTo({
+                top: documentHeight - windowHeight,
+                behavior: 'smooth'
+              });
+            }
+          } else {
+            setIsAtBottom(false);
+          }
+
+          lastScrollY = scrollPosition;
+          ticking = false;
+        });
+
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isAtBottom]);
 
   const handleNavigation = (section) => {
     setActiveSection(section);
     setIsMobileMenuOpen(false);
+    setIsAtBottom(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -406,11 +214,12 @@ function App() {
   const popularPizzas = [
     menuItems.vegPizza[0],
     menuItems.chickenPizza[0],
-    menuItems.premiumNonVegPizza[menuItems.premiumNonVegPizza.length - 1],
+    menuItems.premiumNonVegPizza[0],
   ];
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 flex items-center justify-between px-6 py-4 lg:px-12">
         <div
           className="text-3xl font-bold text-white cursor-pointer"
@@ -445,6 +254,7 @@ function App() {
           {isMobileMenuOpen ? <X size={24} /> : <MenuIcon size={24} />}
         </button>
 
+        {/* Mobile Menu */}
         <div
           className={`fixed top-0 right-0 h-screen w-64 bg-black bg-opacity-95 transform transition-transform duration-300 ease-in-out ${
             isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -473,6 +283,7 @@ function App() {
         </div>
       </nav>
 
+      {/* Pizza Modal */}
       {isModalOpen && selectedPizza && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
@@ -504,7 +315,7 @@ function App() {
               <div className="mt-6">
                 <h4 className="font-semibold text-lg mb-2">Ingredients:</h4>
                 <div className="flex flex-wrap gap-2">
-                  {selectedPizza.ingredients.map((ingredient, index) => (
+                  {selectedPizza.ingredients?.map((ingredient, index) => (
                     <span
                       key={index}
                       className="bg-gray-100 px-3 py-1 rounded-full text-sm"
@@ -542,6 +353,7 @@ function App() {
       )}
 
       <div className="pt-16">
+        {/* Home Section */}
         {activeSection === 'home' && (
           <>
             <header className="relative h-screen">
@@ -637,6 +449,7 @@ function App() {
           </>
         )}
 
+        {/* Menu Section */}
         {activeSection === 'menu' && (
           <section className="min-h-screen relative">
             <div className="absolute inset-0">
@@ -694,6 +507,7 @@ function App() {
           </section>
         )}
 
+        {/* Contact Section */}
         {activeSection === 'contact' && (
           <section className="min-h-screen relative">
             <div className="absolute inset-0">

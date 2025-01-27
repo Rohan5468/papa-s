@@ -179,6 +179,24 @@ const menuItems = {
       bestSeller: true
     },
   ],
+  fromthechef:[
+    {
+      name: 'Chicken Chilli',
+      price: 'Rs.350',
+    },
+    {
+      name: 'Chips Chilli',
+      price: 'Rs.275',
+    },
+    {
+      name: 'Peri Peri Chicken/Paneer & Fries',
+      price: 'Rs.420',
+    },
+    {
+      name: 'Rice Bowl Chicken/Paneer, Chicken Satay',
+      price: '355/399',
+    },
+  ],
   fryer: [
     {
       name: 'French Fries',
@@ -330,6 +348,7 @@ const menuCategories = [
   { id: 'vegPizza', title: 'Veg Pizza', items: menuItems.vegPizza },
   { id: 'chickenPizza', title: 'Chicken Pizza', items: menuItems.chickenPizza },
   { id: 'premiumNonVegPizza', title: 'Non-Veg Pizza Premium', items: menuItems.premiumNonVegPizza },
+  { id: 'fromthechef', title: ' From the Chef', items: menuItems.fromthechef },
   { id: 'fryer', title: 'From the Fryer', items: menuItems.fryer },
   { id: 'breakfast', title: 'Daily Breakfast', items: menuItems.breakfast },
   { id: 'sandwiches', title: 'Sandwiches', items: menuItems.sandwiches },

@@ -672,7 +672,7 @@ function App() {
                       onClick={() => setActiveCategory(category.id)}
                       className={`px-6 py-2 rounded-full transition-all duration-300 ${
                         activeCategory === category.id
-                          ? 'bg-yellow-400 text-black'
+                          ? 'bg-yellow-600 text-black'
                           : 'bg-white/10 text-white hover:bg-white/20'
                       }`}
                     >
@@ -771,72 +771,70 @@ function App() {
         {/* Footer */}
         <footer
           id="contact"
-          className="bg-black text-white py-12 px-6 lg:px-12"
-        >
+          className="bg-black text-white py-12 px-6 lg:px-12">
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">Papa's Pizza</h3>
-              <p className="text-gray-400">Serving the best pizza</p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Our Team</h4>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gray-700 flex-shrink-0"></div>
-                  <p className="text-gray-400">CEO - Mr. ABC</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gray-700 flex-shrink-0"></div>
-                  <p className="text-gray-400">Manager - Mr. CDE</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gray-700 flex-shrink-0"></div>
-                  <p className="text-gray-400">Head Chef - Mr. FGH</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gray-700 flex-shrink-0"></div>
-                  <p className="text-gray-400">Kitchen Helper - Mr. YRI</p>
-                </div>
+                <h3 className="text-2xl font-bold mb-4">Papa's Pizza</h3>
+                <p className="text-gray-400">Serving the best pizza</p>
               </div>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">More Staff</h4>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gray-700 flex-shrink-0"></div>
-                  <p className="text-gray-400">Cashier - Mr. EHID</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gray-700 flex-shrink-0"></div>
-                  <p className="text-gray-400">Barista - Mr. HDJD</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gray-700 flex-shrink-0"></div>
-                  <p className="text-gray-400">Waiter - Mr. HDJD</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex space-x-4">
-                    <a
-                      href="https://www.facebook.com/profile.php?id=61563824227661"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors duration-300"
-                    >
-                      <Facebook className="w-6 h-6" />
-                    </a>
-                    <a
-                      href="https://www.instagram.com/papas.pizza28/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors duration-300"
-                    >
-                      <Instagram className="w-6 h-6" />
-                    </a>
-                    <Twitter className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
+              <div>
+                <h4 className="font-semibold mb-4">Our Team</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <img src="/path-to-photo/ceo.jpg" alt="CEO - Mr. ABC" className="w-8 h-8 rounded-full flex-shrink-0" />
+                    <p className="text-gray-400">CEO - Mr. ABC</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <img src="/path-to-photo/manager.jpg" alt="Manager - Mr. CDE" className="w-8 h-8 rounded-full flex-shrink-0" />
+                    <p className="text-gray-400">Manager - Mr. CDE</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <img src="/path-to-photo/head-chef.jpg" alt="Head Chef - Mr. FGH" className="w-8 h-8 rounded-full flex-shrink-0" />
+                    <p className="text-gray-400">Head Chef - Mr. FGH</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <img src="/path-to-photo/kitchen-helper.jpg" alt="Kitchen Helper - Mr. YRI" className="w-8 h-8 rounded-full flex-shrink-0" />
+                    <p className="text-gray-400">Kitchen Helper - Mr. YRI</p>
                   </div>
                 </div>
               </div>
-            </div>
+              <div>
+                <h4 className="font-semibold mb-4">More Staff</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <img src="/path-to-photo/cashier.jpg" alt="Cashier - Mr. EHID" className="w-8 h-8 rounded-full flex-shrink-0" />
+                    <p className="text-gray-400">Cashier - Miss. Rima</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <img src="/path-to-photo/barista.jpg" alt="Barista - Mr. HDJD" className="w-8 h-8 rounded-full flex-shrink-0" />
+                    <p className="text-gray-400">Barista - Mr. HDJD</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <img src="/path-to-photo/waiter.jpg" alt="Waiter - Mr. HDJD" className="w-8 h-8 rounded-full flex-shrink-0" />
+                    <p className="text-gray-400">Waiter - Mr. HDJD</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="flex space-x-4">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61563824227661"
+                    target="_blank"
+                     rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors duration-300">
+                    <Facebook className="w-6 h-6" />
+                  </a>
+                  <a
+                      href="https://www.instagram.com/papas.pizza28/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors duration-300">
+                      <Instagram className="w-6 h-6" />
+                  </a>
+                    <Twitter className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
+                </div>
+              </div>
           </div>
           <div className="mt-8 text-center text-gray-400 text-sm">
             © 2024 Papa's Pizza. All rights reserved.

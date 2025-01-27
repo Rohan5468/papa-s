@@ -133,6 +133,17 @@ const menuItems = {
   ],
   premiumNonVegPizza: [
     {
+      name: "Supper Papa's",
+      price: 'Rs. 910/1050',
+      description: 'Our signature pizza with special marinated chicken',
+      image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80',
+      ingredients: ['Premium Chicken', 'Special Papa\'s Sauce', 'Extra Mozzarella', 'Mixed Bell Peppers', 'Red Onions', 'Fresh Herbs'],
+      size: '9 inches, 12 inches',
+      preparationTime: '25-30 minutes',
+      spicyLevel: 'Hot',
+      bestSeller: true
+    },
+    {
       name: 'Pepperoni Pizza',
       price: 'Rs.630/720',
       description: 'Loaded with various premium meats',
@@ -166,17 +177,6 @@ const menuItems = {
       name: 'Meat Lovers',
       price: 'Rs.850/980',
       description: 'Loaded with various premium meats',
-    },
-    {
-      name: "Supper Papa's",
-      price: 'Rs. 910/1050',
-      description: 'Our signature pizza with special marinated chicken',
-      image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80',
-      ingredients: ['Premium Chicken', 'Special Papa\'s Sauce', 'Extra Mozzarella', 'Mixed Bell Peppers', 'Red Onions', 'Fresh Herbs'],
-      size: '9 inches, 12 inches',
-      preparationTime: '25-30 minutes',
-      spicyLevel: 'Hot',
-      bestSeller: true
     },
   ],
   fryer: [

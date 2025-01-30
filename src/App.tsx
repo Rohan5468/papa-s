@@ -1,4 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import {
+  useState,
+  useEffect,
+  SetStateAction,
+  JSXElementConstructor,
+  Key,
+  ReactElement,
+  ReactNode,
+  ReactPortal,
+} from 'react';
 import {
   Phone,
   Clock,
@@ -18,117 +27,146 @@ const menuItems = {
       name: 'Veggie Delights',
       price: 'Rs. 580/660',
       description: 'Fresh tomatoes, mozzarella, basil',
-      image: 'https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&q=80',
-      ingredients: ['Fresh Tomatoes', 'Mozzarella', 'Basil', 'Olive Oil', 'Italian Herbs'],
+      image:
+        'https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&q=80',
+      ingredients: [
+        'Fresh Tomatoes',
+        'Mozzarella',
+        'Basil',
+        'Olive Oil',
+        'Italian Herbs',
+      ],
       size: '9 inches, 12 inches',
       preparationTime: '15-20 minutes',
       spicyLevel: 'Mild',
-      bestSeller: true
+      bestSeller: true,
     },
     {
       name: 'Pizza Marinara',
       price: 'Rs.430/470',
       description: 'Olive Oil, Tomato Sauce, Mozarella Cheese',
     },
-     {
+    {
       name: 'Pizza Margherita',
       price: 'Rs.430/470',
       description: 'Olive Oil,Fresh Totato, Tomato Sauce, Mozarella Cheese',
       size: '9 inches, 12 inches',
     },
-     {
+    {
       name: 'AL Funghi',
       price: 'Rs.480/550',
-      description: 'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Mushroom',
+      description:
+        'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Mushroom',
     },
-     {
+    {
       name: 'Mushroom and Olives',
       price: 'Rs.530/590',
-      description: 'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Mushroom and Black Olives',
+      description:
+        'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Mushroom and Black Olives',
     },
     {
       name: 'Standared Veg',
       price: 'Rs.520/600',
-      description: 'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Mushroom and Green Bell Peppers',
+      description:
+        'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Mushroom and Green Bell Peppers',
     },
     {
       name: 'Cheesy Mushroom',
       price: 'Rs.520/600',
-      description: 'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Extra Mozarella',
+      description:
+        'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Extra Mozarella',
     },
-     {
+    {
       name: 'Pineapple and Black Olives',
       price: 'Rs.580/660',
-      description: 'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Juicy Pineapples and Black Olives, size: 9 inches, 12 inches',
-      
+      description:
+        'Olive Oil,Tomato Sauce, Mozarella Cheese, Topped with Juicy Pineapples and Black Olives, size: 9 inches, 12 inches',
     },
-     {
+    {
       name: 'Grandma"s Pizza',
       price: 'Rs.495',
-      description: 'A Squated shape pizza, Neopolitana Sauce, Oregano and Mozarella',
+      description:
+        'A Squated shape pizza, Neopolitana Sauce, Oregano and Mozarella',
     },
-     {
+    {
       name: 'New York Pizza',
       price: 'Rs.440/490',
-      description: 'Olive Oil, Tomato Sauce, Mozarella Cheese, Topped with Juicy Pineapples and Black Olives',
-      },
-     {
+      description:
+        'Olive Oil, Tomato Sauce, Mozarella Cheese, Topped with Juicy Pineapples and Black Olives',
+    },
+    {
       name: 'Greek Style',
       price: 'Rs.530/580',
-      description: 'Olive Oil, Tomato Sauce, Mozarella Cheese, Topped with Diced Tomatoes, Mushroom and Green Bell Peppers',
-      },
+      description:
+        'Olive Oil, Tomato Sauce, Mozarella Cheese, Topped with Diced Tomatoes, Mushroom and Green Bell Peppers',
+    },
     {
       name: 'White/ Blanca Pizza',
       price: 'Rs.410/490',
       description: 'Garlic, Buffer, Mozarella',
-      },
+    },
   ],
   chickenPizza: [
     {
-      name: "Chicken Supreme",
+      name: 'Chicken Supreme',
       price: 'Rs.760/880',
       description: 'Our signature pizza with special marinated chicken',
-      image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&q=80',
-      ingredients: ['Marinated Chicken', 'Special Sauce', 'Mozzarella', 'Bell Peppers', 'Onions', 'Fresh Basil'],
+      image:
+        'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&q=80',
+      ingredients: [
+        'Marinated Chicken',
+        'Special Sauce',
+        'Mozzarella',
+        'Bell Peppers',
+        'Onions',
+        'Fresh Basil',
+      ],
       size: '9 inches, 12 inches',
       preparationTime: '20-25 minutes',
       spicyLevel: 'Medium',
-      bestSeller: true
+      bestSeller: true,
     },
     {
       name: 'Standard Chicken',
       price: 'Rs.520/600',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
+      description:
+        'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
     },
     {
       name: 'Spicy Chiken',
       price: 'Rs.540/680',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
+      description:
+        'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
     },
     {
       name: 'Tandoori Chicken',
       price: 'Rs.630/720',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
+      description:
+        'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
     },
     {
       name: 'Peri Peri Chicken',
       price: 'Rs.630/720',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
+      description:
+        'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
     },
     {
       name: 'Cheesy Chicken',
       price: 'Rs.650/740',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
+      description:
+        'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
     },
     {
       name: 'Barbeque Chicken',
       price: 'Rs.650/740',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
+      description:
+        'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
     },
     {
       name: 'Chicken Mushroom',
       price: 'Rs.660/750',
-      description: 'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
+      description:
+        'Oil, Tomato sauce, Mozarella Chees, Topped with Grilled Chicken',
     },
   ],
   premiumNonVegPizza: [
@@ -136,12 +174,20 @@ const menuItems = {
       name: "Supper Papa's",
       price: 'Rs. 910/1050',
       description: 'Our signature pizza with special marinated chicken',
-      image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80',
-      ingredients: ['Premium Chicken', 'Special Papa\'s Sauce', 'Extra Mozzarella', 'Mixed Bell Peppers', 'Red Onions', 'Fresh Herbs'],
+      image:
+        'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80',
+      ingredients: [
+        'Premium Chicken',
+        "Special Papa's Sauce",
+        'Extra Mozzarella',
+        'Mixed Bell Peppers',
+        'Red Onions',
+        'Fresh Herbs',
+      ],
       size: '9 inches, 12 inches',
       preparationTime: '25-30 minutes',
       spicyLevel: 'Hot',
-      bestSeller: true
+      bestSeller: true,
     },
     {
       name: 'Pepperoni Pizza',
@@ -197,11 +243,18 @@ const menuItems = {
       price: 'Rs.450',
     },
   ],
+  fromthechef: [
+    {
+      name: 'Chichken Chilly',
+      price: 'Rs.',
+    },
+  ],
   breakfast: [
     {
       name: "Papa's Breakfast Set",
       price: 'Rs.550',
-      description: 'Sausage, Bacon, Egg, Phaparko Roti, Hash Brown (Honey or Maple Syrup), Tea or Coffee',
+      description:
+        'Sausage, Bacon, Egg, Phaparko Roti, Hash Brown (Honey or Maple Syrup), Tea or Coffee',
     },
     {
       name: "Papa's Veg Breakfast Set",
@@ -223,29 +276,34 @@ const menuItems = {
     {
       name: 'Bacon and Egg',
       price: 'Rs.300',
-      description: 'Refreshing and Spicy Leek Soup, Topped with Eatable Flowers',
+      description:
+        'Refreshing and Spicy Leek Soup, Topped with Eatable Flowers',
     },
     {
       name: 'Cheese Sandwich',
       price: 'Rs.230',
-      description: 'Warming Potato, Beet Gratin, Served with a Protein of the Season',
+      description:
+        'Warming Potato, Beet Gratin, Served with a Protein of the Season',
     },
   ],
   burgers: [
     {
       name: 'Grilled Chicken Burger',
       price: 'Rs.495',
-      description: 'Filleted Chicken Breast, Grilled on a Pan with Cheese, BBQ Sauce served with Fries, A Choice of Sauce',
+      description:
+        'Filleted Chicken Breast, Grilled on a Pan with Cheese, BBQ Sauce served with Fries, A Choice of Sauce',
     },
     {
       name: 'Crispy Chicken Burger',
       price: 'Rs.295',
-      description: 'KFC styles Chicken Fillet in a Warm Loasted Bun, Served with Fries, Thousand Island Sauce',
+      description:
+        'KFC styles Chicken Fillet in a Warm Loasted Bun, Served with Fries, Thousand Island Sauce',
     },
     {
       name: 'VEG Burger',
       price: 'Rs.265',
-      description: 'Deep Fried Vegetarian Pally with a Buffer Toasted Bun, Served with Thousand Island Sauce',
+      description:
+        'Deep Fried Vegetarian Pally with a Buffer Toasted Bun, Served with Thousand Island Sauce',
     },
     {
       name: 'Peri Peri Burger',
@@ -286,19 +344,19 @@ const menuItems = {
       name: 'Hazulenut Latte',
       price: 'Rs. 275',
     },
-     {
+    {
       name: 'Caramal Latte',
       price: 'Rs. 275',
     },
-     {
+    {
       name: 'Honey Latte',
       price: 'Rs. 275',
     },
-     {
+    {
       name: 'Cinnamon Latte',
       price: 'Rs. 275',
     },
-     {
+    {
       name: 'Turmeric Latte',
       price: 'Rs. 275',
     },
@@ -306,19 +364,19 @@ const menuItems = {
       name: 'Iced Latte',
       price: 'Rs. 270',
     },
-     {
+    {
       name: 'Iced Americano',
       price: 'Rs. 260',
     },
-     {
+    {
       name: 'Iced Flavor Coffee',
       price: 'Rs. 325',
     },
-     {
+    {
       name: 'Iced Caramel Macchito',
       price: 'Rs. 340',
     },
-     {
+    {
       name: 'Iced Tea (Peach/Apple/Lamon)',
       price: 'Rs.230',
     },
@@ -329,7 +387,11 @@ const menuItems = {
 const menuCategories = [
   { id: 'vegPizza', title: 'Veg Pizza', items: menuItems.vegPizza },
   { id: 'chickenPizza', title: 'Chicken Pizza', items: menuItems.chickenPizza },
-  { id: 'premiumNonVegPizza', title: 'Non-Veg Pizza Premium', items: menuItems.premiumNonVegPizza },
+  {
+    id: 'premiumNonVegPizza',
+    title: 'Non-Veg Pizza Premium',
+    items: menuItems.premiumNonVegPizza,
+  },
   { id: 'fromthechef', title: ' From the Chef', items: menuItems.fromthechef },
   { id: 'fryer', title: 'From the Fryer', items: menuItems.fryer },
   { id: 'breakfast', title: 'Daily Breakfast', items: menuItems.breakfast },
@@ -362,7 +424,6 @@ function App() {
 
   useEffect(() => {
     let ticking = false;
-    let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
       if (!ticking) {
@@ -379,14 +440,13 @@ function App() {
               // Smoothly scroll to the exact bottom
               window.scrollTo({
                 top: documentHeight - windowHeight,
-                behavior: 'smooth'
+                behavior: 'smooth',
               });
             }
           } else {
             setIsAtBottom(false);
           }
 
-          lastScrollY = scrollPosition;
           ticking = false;
         });
 
@@ -398,14 +458,50 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isAtBottom]);
 
-  const handleNavigation = (section) => {
+  const handleNavigation = (section: SetStateAction<string>) => {
     setActiveSection(section);
     setIsMobileMenuOpen(false);
     setIsAtBottom(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const openPizzaModal = (pizza) => {
+  const openPizzaModal = (
+    pizza:
+      | {
+          name: string;
+          price: string;
+          description: string;
+          image: string;
+          ingredients: string[];
+          size: string;
+          preparationTime: string;
+          spicyLevel: string;
+          bestSeller: boolean;
+        }
+      | {
+          name: string;
+          price: string;
+          description: string;
+          image?: undefined;
+          ingredients?: undefined;
+          size?: undefined;
+          preparationTime?: undefined;
+          spicyLevel?: undefined;
+          bestSeller?: undefined;
+        }
+      | {
+          name: string;
+          price: string;
+          description: string;
+          size: string;
+          image?: undefined;
+          ingredients?: undefined;
+          preparationTime?: undefined;
+          spicyLevel?: undefined;
+          bestSeller?: undefined;
+        }
+      | SetStateAction<null>
+  ) => {
     setSelectedPizza(pizza);
     setIsModalOpen(true);
   };
@@ -502,7 +598,9 @@ function App() {
             <div className="p-6">
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-2xl font-bold">{selectedPizza.name}</h3>
-                <p className="text-xl font-bold text-yellow-600">{selectedPizza.price}</p>
+                <p className="text-xl font-bold text-yellow-600">
+                  {selectedPizza.price}
+                </p>
               </div>
               {selectedPizza.bestSeller && (
                 <span className="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block">
@@ -510,21 +608,34 @@ function App() {
                 </span>
               )}
               <p className="text-gray-600 mt-4">{selectedPizza.description}</p>
-              
+
               <div className="mt-6">
                 <h4 className="font-semibold text-lg mb-2">Ingredients:</h4>
                 <div className="flex flex-wrap gap-2">
-                  {selectedPizza.ingredients?.map((ingredient, index) => (
-                    <span
-                      key={index}
-                      className="bg-gray-100 px-3 py-1 rounded-full text-sm"
-                    >
-                      {ingredient}
-                    </span>
-                  ))}
+                  {selectedPizza.ingredients?.map(
+                    (
+                      ingredient:
+                        | string
+                        | number
+                        | boolean
+                        | ReactElement<any, string | JSXElementConstructor<any>>
+                        | Iterable<ReactNode>
+                        | ReactPortal
+                        | null
+                        | undefined,
+                      index: Key | null | undefined
+                    ) => (
+                      <span
+                        key={index}
+                        className="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                      >
+                        {ingredient}
+                      </span>
+                    )
+                  )}
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div>
                   <h4 className="font-semibold">Size</h4>
@@ -532,7 +643,9 @@ function App() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Preparation Time</h4>
-                  <p className="text-gray-600">{selectedPizza.preparationTime}</p>
+                  <p className="text-gray-600">
+                    {selectedPizza.preparationTime}
+                  </p>
                 </div>
                 <div>
                   <h4 className="font-semibold">Spicy Level</h4>
@@ -634,7 +747,7 @@ function App() {
                         {pizza.name}
                       </h3>
                       <p className="text-yellow-400 font-bold">{pizza.price}</p>
-                      <button 
+                      <button
                         onClick={() => openPizzaModal(pizza)}
                         className="mt-4 w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition"
                       >
@@ -694,9 +807,13 @@ function App() {
                             <h4 className="text-xl font-semibold text-white">
                               {item.name}
                             </h4>
-                            <p className="text-gray-300 mt-2">{item.description}</p>
+                            <p className="text-gray-300 mt-2">
+                              {item.description}
+                            </p>
                           </div>
-                          <p className="text-yellow-400 font-bold">{item.price}</p>
+                          <p className="text-yellow-400 font-bold">
+                            {item.price}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -771,70 +888,101 @@ function App() {
         {/* Footer */}
         <footer
           id="contact"
-          className="bg-black text-white py-12 px-6 lg:px-12">
+          className="bg-black text-white py-12 px-6 lg:px-12"
+        >
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
             <div>
-                <h3 className="text-2xl font-bold mb-4">Papa's Pizza</h3>
-                <p className="text-gray-400">Serving the best pizza</p>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-4">Our Team</h4>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <img src="/path-to-photo/ceo.jpg" alt="CEO - Mr. ABC" className="w-8 h-8 rounded-full flex-shrink-0" />
-                    <p className="text-gray-400">CEO - Mr. ABC</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <img src="/path-to-photo/manager.jpg" alt="Manager - Mr. CDE" className="w-8 h-8 rounded-full flex-shrink-0" />
-                    <p className="text-gray-400">Manager - Mr. CDE</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <img src="/path-to-photo/head-chef.jpg" alt="Head Chef - Mr. FGH" className="w-8 h-8 rounded-full flex-shrink-0" />
-                    <p className="text-gray-400">Head Chef - Mr. FGH</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <img src="/path-to-photo/kitchen-helper.jpg" alt="Kitchen Helper - Mr. YRI" className="w-8 h-8 rounded-full flex-shrink-0" />
-                    <p className="text-gray-400">Kitchen Helper - Mr. YRI</p>
-                  </div>
+              <h3 className="text-2xl font-bold mb-4">Papa's Pizza</h3>
+              <p className="text-gray-400">Serving the best pizza</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Our Team</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <img
+                    src="/path-to-photo/ceo.jpg"
+                    alt="CEO - Mr. ABC"
+                    className="w-8 h-8 rounded-full flex-shrink-0"
+                  />
+                  <p className="text-gray-400">CEO - Mr. ABC</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <img
+                    src="/path-to-photo/manager.jpg"
+                    alt="Manager - Mr. CDE"
+                    className="w-8 h-8 rounded-full flex-shrink-0"
+                  />
+                  <p className="text-gray-400">Manager - Mr. CDE</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <img
+                    src="/path-to-photo/head-chef.jpg"
+                    alt="Head Chef - Mr. FGH"
+                    className="w-8 h-8 rounded-full flex-shrink-0"
+                  />
+                  <p className="text-gray-400">Head Chef - Mr. FGH</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <img
+                    src="/path-to-photo/kitchen-helper.jpg"
+                    alt="Kitchen Helper - Mr. YRI"
+                    className="w-8 h-8 rounded-full flex-shrink-0"
+                  />
+                  <p className="text-gray-400">Kitchen Helper - Mr. YRI</p>
                 </div>
               </div>
-              <div>
-                <h4 className="font-semibold mb-4">More Staff</h4>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <img src="/path-to-photo/cashier.jpg" alt="Cashier - Mr. EHID" className="w-8 h-8 rounded-full flex-shrink-0" />
-                    <p className="text-gray-400">Cashier - Miss. Rima</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <img src="/path-to-photo/barista.jpg" alt="Barista - Mr. HDJD" className="w-8 h-8 rounded-full flex-shrink-0" />
-                    <p className="text-gray-400">Barista - Mr. HDJD</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <img src="/path-to-photo/waiter.jpg" alt="Waiter - Mr. HDJD" className="w-8 h-8 rounded-full flex-shrink-0" />
-                    <p className="text-gray-400">Waiter - Mr. HDJD</p>
-                  </div>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">More Staff</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <img
+                    src="/path-to-photo/cashier.jpg"
+                    alt="Cashier - Mr. EHID"
+                    className="w-8 h-8 rounded-full flex-shrink-0"
+                  />
+                  <p className="text-gray-400">Cashier - Miss. Rima</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <img
+                    src="/path-to-photo/barista.jpg"
+                    alt="Barista - Mr. HDJD"
+                    className="w-8 h-8 rounded-full flex-shrink-0"
+                  />
+                  <p className="text-gray-400">Barista - Mr. HDJD</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <img
+                    src="/path-to-photo/waiter.jpg"
+                    alt="Waiter - Mr. HDJD"
+                    className="w-8 h-8 rounded-full flex-shrink-0"
+                  />
+                  <p className="text-gray-400">Waiter - Mr. HDJD</p>
                 </div>
               </div>
+            </div>
 
-              <div className="flex items-center gap-3">
-                <div className="flex space-x-4">
-                  <a
-                    href="https://www.facebook.com/profile.php?id=61563824227661"
-                    target="_blank"
-                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors duration-300">
-                    <Facebook className="w-6 h-6" />
-                  </a>
-                  <a
-                      href="https://www.instagram.com/papas.pizza28/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors duration-300">
-                      <Instagram className="w-6 h-6" />
-                  </a>
-                    <Twitter className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
-                </div>
+            <div className="flex items-center gap-3">
+              <div className="flex space-x-4">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61563824227661"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  <Facebook className="w-6 h-6" />
+                </a>
+                <a
+                  href="https://www.instagram.com/papas.pizza28/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  <Instagram className="w-6 h-6" />
+                </a>
+                <Twitter className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
               </div>
+            </div>
           </div>
           <div className="mt-8 text-center text-gray-400 text-sm">
             © 2024 Papa's Pizza. All rights reserved.
